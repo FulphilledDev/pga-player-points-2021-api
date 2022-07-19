@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021 Top 225 PGA Player Stats API</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>2021: Top 225 PGA Tour Player API</h1>
+    <img src="https://i.imgur.com/xKLWGXY.png">
+    <section id="documentation">
+        <p>2021 Season stats and player information are included in this API.</p>
+        <p>Access your desired player via .../api/player name or select from the list below</p>
+    </section>
+    <section class="search">
+        <select id="selectPlayer">
+            <option>Select a Player</option>
+            <option value="Jon Rahm">Jon Rahm</option>
+            <option value="Dustin Johnson">Dustin Johnson</option>
+            <option value="Collin Morikawa">Collin Morikawa</option>
+            <option value="Patrick Cantlay">Patrick Cantlay</option>
+            <option value="Xander Schauffele">Xander Schauffele</option>
+            <option value="Justin Thomas">Justin Thomas</option>
+            <option value="Bryson DeChambeau">Bryson DeChambeau</option>
+            <option value="Louis Oosthuizen">Louis Oosthuizen</option>
+            <option value="Tony Finau">Tony Finau</option>
+            <option value="Brooks Koepka">Brooks Koepka</option>
+            <option value="Harris English">Harris English</option>
+            <option value="Abraham Ancer">Abraham Ancer</option>
+            <option value="Rory McIlroy">Rory McIlroy</option>
+            <option value="Viktor Hovland">Viktor Hovland</option>
+            <option value="Jordan Spieth">Jordan Spieth</option>
+            <option value="Daniel Berger">Daniel Berger</option>
+            <option value="Tyrrell Hatton">Tyrrell Hatton</option>
+            <option value="Hideki Matsuyama">Hideki Matsuyama</option>
+            <option value="Patrick Reed">Patrick Reed</option>
+            <option value="Webb Simpson">Webb Simpson</option>
+            <option value="Scott Scheffler">Scott Scheffler</option>
+            <option value="Paul Casey">Paul Casey</option>
+            <option value="Cameron Smith">Cameron Smith</option>
+            <option value="Kevin Na">Kevin Na</option>
+            <option value="Sam Burns">Sam Burns</option>
+            <option value="Matthew Fitzpatrick">Matthew Fitzpatrick</option>
+            <option value="Jason Kokrak">Jason Kokrak</option>
+            <option value="Billy Horschel">Billy Horschel</option>
+            <option value="Sung-Jae Im">Sung-Jae Im</option>
+            <option value="Joaquin Niemann">Joaquin Niemann</option>
+            <option value="Will Zalatoris">Will Zalatoris</option>
+            <option value="Corey Conners">Corey Conners</option>
+            <option value="Lee Westwood">Lee Westwood</option>
+            <option value="Phil Mickelson">Phil Mickelson</option>
+            <option value="Kevin Kisner">Kevin Kisner</option>
+            <option value="Ryan Palmer">Ryan Palmer</option>
+            <option value="Tommy Fleetwood">Tommy Fleetwood</option>
+            <option value="Marc Leishman">Marc Leishman</option>
+            <option value="Adam Scott">Adam Scott</option>
+            <option value="Shane Lowry">Shane Lowry</option>
+            <option value="Sergio Garcia">Sergio Garcia</option>
+            <option value="Max Homa">Max Homa</option>
+            <option value="Brian Harman">Brian Harman</option>
+            <option value="Christiaan Bezuidenhout">Christiaan Bezuidenhout</option>
+            <option value="Justin Rose">Justin Rose</option>
+            <option value="Stewart Cink">Stewart Cink</option>
+            <option value="Garrick Higgo">Garrick Higgo</option>
+            <option value="Ian Poulter">Ian Poulter</option>
+            <option value="Matthew Wolff">Matthew Wolff</option>
+            <option value="Si Woo Kim">Si Woo Kim</option>
+            <option value="Victor Perez">Victor Perez</option>
+            <option value="Lucas Herbert">Lucas Herbert</option>
+            <option value="Erik Van Rooyen">Erik Van Rooyen</option>
+            <option value="Robert MacIntyre">Robert MacIntyre</option>
+            <option value="Mackenzie Hughes">Mackenzie Hughes</option>
+            <option value="Kevin Streelman">Kevin Streelman</option>
+            <option value="Branden Grace">Branden Grace</option>
+            <option value="Kyoung-Hoon Lee">Kyoung-Hoon Lee</option>
+            <option value="Russell Henley">Russell Henley</option>
+            <option value="Min Woo Lee">Min Woo Lee</option>
+            <option value="Charley Hoffman">Charley Hoffman</option>
+            <option value="Alexander Noren">Alexander Noren</option>
+            <option value="Bernd Wiesberger">Bernd Wiesberger</option>
+            <option value="Cameron Davis">Cameron Davis</option>
+            <option value="Bubba Watson">Bubba Watson</option>
+            <option value="Carlos Ortiz">Carlos Ortiz</option>
+            <option value="Sebastian Munoz">Sebastian Munoz</option>
+            <option value="Chris Kirk">Chris Kirk</option>
+            <option value="Cameron Champ">Cameron Champ</option>
+        </select>
+    </section>
+    <section class="result">
+        <div class="output-container">
+            <span>Player Season ID</span>
+            <div id="PlayerSeasonID"></div>
+        </div>
+        <div class="output-container">
+            <span>Season</span>
+            <div id="Season"></div>
+        </div>
+        <div class="output-container">
+            <span>Player ID</span>
+            <div id="PlayerID"></div>
+        </div>
+        <div class="output-container">
+            <span>Name</span>
+            <div id="Name"></div>
+        </div>
+        <div class="output-container">
+            <span>World Golf Rank</span>
+            <div id="WorldGolfRank"></div>
+        </div>
+        <div class="output-container">
+            <span>World Golf Rank Last Week</span>
+            <div id="WorldGolfRankLastWeek"></div>
+        </div>
+        <div class="output-container">
+            <span>Events</span>
+            <div id="Events"></div>
+        </div>
+        <div class="output-container">
+            <span>Average Points</span>
+            <div id="AveragePoints"></div>
+        </div>
+        <div class="output-container">
+            <span>Total Points</span>
+            <div id="TotalPoints"></div>
+        </div>
+        <div class="output-container">
+            <span>Points Lost</span>
+            <div id="PointsLost"></div>
+        </div>
+        <div class="output-container">
+            <span>Points Gained</span>
+            <div id="PointsGained"></div>
+        </div>
+        <div class="primary">
+            <span>JSON</span>
+            <div id="result"></div>
+        </div>
+    </section>
+    <section>
+        <p>Expected improvements:</p>
+        <ul>
+            <li>Player Headshots</li>
+            <li>Player Career Wins</li>
+        </ul>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
